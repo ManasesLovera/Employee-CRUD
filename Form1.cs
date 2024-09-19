@@ -125,6 +125,10 @@ namespace UnidadVI
 
                         this.Clear();
                     }
+                    else
+                    {
+                        MessageBox.Show("Campos vacios!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else if (btnSave.Text == "Update" && _context != null)
                 {
@@ -148,6 +152,10 @@ namespace UnidadVI
 
                         this.Clear();
                     }
+                    else
+                    {
+                        MessageBox.Show("Campos no pueden estar vacios!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 this.LoadData();
             }
@@ -157,7 +165,7 @@ namespace UnidadVI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
